@@ -1,0 +1,67 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">{{title}}</h3>
+            </div>
+            <form name='form1' class="form-horizontal" role="form" novalidate>
+                <div class="modal-body">
+                    <p>
+
+                    </p>
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Nom</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="text" class="form-control" ng-model="contact.nom" name="code" value="" ng-required="true" />
+                            </div>
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Prenom</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="text" class="form-control" ng-model="contact.prenom" name="code" value="" ng-required="true" />
+                            </div>
+                            <!--<input type="text" class="form-control" ng-model="images" name="b6" value="" />-->
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Telephone</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="tel" class="form-control" ng-model="contact.telephone" name="code" value="" ng-required="true" required />
+                            </div>
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">E_Mail</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="email" class="form-control" ng-model="contact.email" name="code" value="" ng-required="true" required />
+                            </div>
+
+
+
+                            <!--<input type="text" class="form-control" ng-model="images" name="b6" value="" />-->
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Ville</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="text" class="form-control" ng-model="contact.ville" name="code" value="" ng-required="true" />
+                            </div>
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Adresse</label>
+                            <div class="col-sm-9" style="margin-bottom:5px;">
+                                <input type="text" class="form-control" ng-model="contact.addresse" name="code" value="" ng-required="true" />
+                            </div>
+
+                            <label class="col-sm-3 control-label" style="margin-bottom:5px;">Date</label>
+                            <div class="col-sm-6" style="margin-bottom:5px;">
+                                <datetimepicker id="date" name="date" ng-model="contact.date" show-meridian="showMeridian" date-format="dd-MMM-yyyy" ng-required="true">
+                                </datetimepicker>
+                            </div>
+                            <div class="3"></div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" ng-click="close()" ng-disabled="form1.$invalid" class="btn btn-warning" data-dismiss="modal">Save</button>
+                        <button type="button" ng-click="cancel()" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+            </form>
+
+
+
+
+
+            </div>
+        </div>
+    </div>

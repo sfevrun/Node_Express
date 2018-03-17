@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <div class="col-md-2 pull-right">
+                        <select class="form-control" ng-model="numberPage">
+                                    <option value="10" ng-selected>10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                    </div>
+                </div>
+                <button class="btn btn-info" ng-click="showContact()">Nouveau</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                        <table class="table table-bordered table-striped table-hover">
+                            <tr style="color: #0094ff;">
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Telephone</th>
+                                <th>E-mail</th>
+                                <th>Ville</th>
+                                <th>Addresse</th>
+                                <th>Date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr dir-paginate="c in contacts|orderBy:sortKey:reverse|filter:search|itemsPerPage:numberPage">
+                                <td>{{c.id}}</td>
+                                <td>{{c.nom}}</td>
+                                <td>{{c.prenom}}</td>
+                                <td>{{c.telephone}}</td>
+                                <td>{{c.email}}</td>
+                                <td>{{c.ville}}</td>
+                                <td>{{c.addresse}}</td>
+                                <td>{{c.date | date}}</td>
+                                <td style="text-align: center;">
+                                    <buttom class="btn btn-success btn-xs" ng-click="showContact(c.id)"><i class="glyphicon glyphicon-edit"></i></buttom>
+                                </td>
+                                <td style="text-align: center;">
+                                    <buttom class="btn btn-danger btn-xs" confirmed-click="delete(c.id)" ng-confirm-click="Vous voulez supprimer  {{c.nom}} {{c.prenom}}"><i class="glyphicon glyphicon-remove"></i></buttom>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="col-md-12">
+                        <dir-pagination-controls max-size="5" class="pull-right" direction-links="true" boundary-links="true">
+                        </dir-pagination-controls>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
